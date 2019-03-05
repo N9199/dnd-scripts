@@ -1,0 +1,13 @@
+class,hit_die,primary_ability,saving_throws,prof,special,items
+barbarian,d12,str,"str,con","light_armor,medium_armor,shield,simple_weapons,martial_weapons","",""
+bard,d8,cha,"dex,cha","light_armor,simple_weapons,hand_crossbow,longsword,shortsword,rapier","spellcaster_cha",""
+cleric,d8,wis,"wis,cha","light_armor,medium_armor,shield,simple_weapons","spellcaster_wis",""
+druid,d8,wis,"int,wis","light_armor*,medium_armor*,shield*,club,dagger,dart,javelin,mace,quarterstaff,scimitar,sickle,sling,spear","spellcaster_wis",""
+fighter,d10,"str/dex","str,con","armor,shield,simple_weapons,martial_weapons","",""
+monk,d8,"dex,wis","str,dex","simple_weapons,shortsword","",""
+paladin,d10,"str,cha","wis,cha","armor,shield,simple_weapons,martial_weapons","spellcaster_cha,divine_sense,lay_on_hands","armor_chain_mail,misc_holy_symbol,choose:(weapon_martial.shield)/(weapon_martial*2),choose:(javelin*5)/(weapon_simple_melee),choose:(pack_explorer)/(pack_priest)"
+ranger,d10,"dex,wis","str,dex","light_armor,medium_armor,shield,simple_weapons,martial_weapons","spellcaster_wis",""
+rogue,d8,"dex","dex,int","light_armor,simple_weapons,hand_crossbow,longsword,shortsword,rapier","",""
+sorcerer,d6,"cha","con,cha","dagger,dart,sling,quar","spellcaster_cha",""
+warlock,d8,"cha","wis,cha","light_armor,simple_weapons","spellcaster_cha",""
+wizard,d6,"int","int,wis","dagger,dart,sling,quarterstaff,light_crossbow","spellcaster_int",""
