@@ -1,0 +1,3 @@
+class,hit_die,primary_ability,saving_throws,prof,special
+peasant,d4,,"","",""
+merchant,d4,cha,"cha","persuasion,insight",""
