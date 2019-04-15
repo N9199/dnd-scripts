@@ -1,0 +1,2 @@
+class misc:
+    pass

@@ -19,7 +19,22 @@ class stats:
         self.__gen(diff)
 
     @staticmethod
-    def __check(l: int, diff: int):
+    def stat(num: int) -> str:
+        out = "{0:2} ({1})"
+        num = int(num)
+        if num < 10:
+            mod = (num-10)//2
+        elif num > 11:
+            mod = "+{}".format((num-10)//2)
+        else:
+            mod = 0
+        return out.format(num, mod)
+
+    @staticmethod
+    def __check(l: int, diff: int, other: list):
+        temp = sum([(e-10)//2 for e in other])
+        if temp >= (log2(diff)+2)*4 and len(other) == 6:
+            return True
         if l < 2:
             return False
         if l*l/diff < 22:
@@ -35,7 +50,7 @@ class stats:
             temp_stats = []
             for i in range(6):
                 l = 0
-                while not self.__check(l, diff):
+                while not self.__check(l, diff, temp_stats):
                     l += int(log2(diff)+randint(1, log2(diff)+14))
                 temp_stats.append(l)
 
@@ -56,9 +71,11 @@ class stats:
             temp_stats = []
             for i in range(6):
                 l = 0
-                while not self.__check(l, diff):
+                c = 0
+                while not self.__check(l, diff, temp_stats) and 2*c < log2(diff):
                     l += int(sqrt(diff)) + \
                         randint(1, int(sqrt(diff))+8)
+                    c += 1
                 temp_stats.append(l)
 
         self.str = temp_stats.pop()
@@ -79,18 +96,6 @@ class stats:
             "cha: {cha:2}"
         )
         return out.format(**vars(self))
-
-    @staticmethod
-    def stat(num: int) -> str:
-        out = "{0:2} ({1})"
-        num = int(num)
-        if num < 10:
-            mod = (num-10)//2
-        elif num > 11:
-            mod = "+{}".format((num-10)//2)
-        else:
-            mod = 0
-        return out.format(num, mod)
 
 
 if __name__ == "__main__":
